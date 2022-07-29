@@ -10,6 +10,8 @@ app.use(bodyParser.json())
 app.post("/hook", (req, res) => {
   console.log(req.body) // Call your action on the request here
   res.status(200).end() // Responding is important
+  var newData = req.body
+  console.log("distance: " + newData.uplink_message.decoded_payload.analog_in_5)
 })
 
 app.get('/', (req, res) => {
